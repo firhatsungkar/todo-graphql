@@ -74,7 +74,12 @@ const resolvers = {
   }
 };
 
-const server = new ApolloServer({ typeDefs, resolvers, playground: true });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  playground: true,
+  introspection: true
+});
 
 // The `listen` method launches a web server.
 server.listen({ port }).then(({ url }) => {
